@@ -1,0 +1,36 @@
+<% unless @error %>
+	<% i = @to %>
+	<% while i > @from %>
+		<a rel="gallery" href="<%= @lol_pictures[i] %>" title="">
+			<img src="<%= @lol_pictures[i] %>" width=120 height=120>
+		</a>
+	<% i -= 1 %>
+	<% end %>
+
+	<div class="pagination pagination-centered pagination-small">
+		<ul>
+		<% if @page_down >= 1 %>
+			<li><a href="/<%= @page_down %>"><<</a></li>
+		<% else %>
+			<li class="disabled"><span><<</span></li>
+		<% end %>
+			
+	<% p = 1 %>
+	<% while p <= @nb_pages %>
+		<% if p == @page %>
+			<li class="disabled"><span><%= p %></span></li>
+		<% else %>
+			<li><a href="<%= p %>"><%= p %></a></li>
+		<% end %>
+	<% p += 1 %>
+	<% end %>
+
+		<% if @page >= @nb_pages %>
+			<li class="disabled"><span>>></span></li>
+		<% else %>
+			<li><a href="/<%= @page_up %>">>></a></li>
+		<% end %>
+		</ul>
+	</div>
+
+<% end %>

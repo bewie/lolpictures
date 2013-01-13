@@ -1,0 +1,5 @@
+config/*.yaml
+unicorn.rb
+*.swp
+*.log
+.DS_Store

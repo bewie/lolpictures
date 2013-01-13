@@ -1,0 +1,8 @@
+:lolcommits_json: 'http://url/loljson.php'
+:lolcommits_base: 'http://url/'
+:cgit_url: 'http://xxxxx/cgit'
+:options:
+  :refresh_rate: 300
+  :prefix: ""
+  :title: 'demo lolcommit Gallery'
+  :pics_by_page: 80
