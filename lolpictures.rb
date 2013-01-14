@@ -23,9 +23,6 @@ class Lolpictures < ::Sinatra::Base
       super()
     end
 
-	#lolcommits_base = 'http://www.dahwa.fr/stuff/lolcommits/'
-	#lolcommits_json = 'http://www.dahwa.fr/stuff/lolcommits/loljson.php'
-
 	before do
 		expires 500, :public, :must_revalidate
 	end
