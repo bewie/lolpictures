@@ -74,7 +74,7 @@ class Lolpictures < ::Sinatra::Base
 				@pics = Array.new
 				json_res.each do |p|
 			#		#2012 12 27 10 27 30.jpg
-					if p["name"] =~ /(19|20)\d\d(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])\d\d\d\d\d\d\.jpg$/
+					if p["name"] =~ /(19|20)\d\d(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])\d\d\d\d\d\d\.(jpg|png|gif)$/
 						@pics << @lolcommits_base + "/" + p["name"]
 					end
 				end
