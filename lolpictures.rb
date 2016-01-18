@@ -40,7 +40,7 @@ class Lolpictures < ::Sinatra::Base
 		else
 			pager()
 		end
-		
+
 		erb :index
 	end
 
@@ -61,16 +61,15 @@ class Lolpictures < ::Sinatra::Base
 			uri =  URI("#{lolcommits_json}")
 			req = Net::HTTP::Get.new(uri.request_uri)
 			#req.basic_auth params[:user], params[:password]
-	
-			res = Net::HTTP.start(uri.host, uri.port) {|http|
+
+			res = Net::HTTP.start(uri.host, uri.port,:use_ssl => uri.scheme == 'https') {|http|
 				http.request(req)
 			}
-			
 			if res.is_a?(Net::HTTPSuccess)
 				json_res = JSON.parse(res.body)
-	
+
 				# debug messages:
-				#puts res.body
+				# puts res.body
 				@pics = Array.new
 				json_res.each do |p|
 			#		#2012 12 27 10 27 30.jpg
